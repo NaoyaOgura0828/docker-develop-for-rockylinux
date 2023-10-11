@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  rockylinux:
+    image: ${IMAGE_NAME}
+    container_name: ${CONTAINER_NAME}
+    build:
+      context: ./rockylinux
+      dockerfile: Dockerfile
+      args:
+        - DOCKER_IMAGE_TAG=${DOCKER_IMAGE_TAG}
+        - USER_NAME=${USER_NAME}
+    volumes:
+      - home:/home
+      - /etc/passwd:/etc/passwd:ro # Valid only if the host OS is Linux
+      - /etc/group:/etc/group:ro # Valid only if the host OS is Linux
+    user: ${USER_NAME}
+    stdin_open: true
+    tty: true
+
+volumes:
+  home:
+    name: ${VOLUME_NAME}
+
+networks:
+  default:
+    name: ${NETWORK_NAME}
