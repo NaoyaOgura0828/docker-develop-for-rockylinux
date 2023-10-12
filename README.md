@@ -99,7 +99,7 @@ HostがLinux以外の場合は、[docker-compose.yml](./docker-compose.yml)内�
 本Repository直下([docker-compose.yml](./docker-compose.yml)が存在するディレクトリ)で以下のコマンドを実行する。
 
 ```bash
-docker compose up
+docker compose up -d --build
 ```
 
 <br>
