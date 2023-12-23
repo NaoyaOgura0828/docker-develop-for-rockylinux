@@ -35,13 +35,13 @@ IMAGE_NAME = ${コンテナイメージ名}
 
 <br>
 
-> **Warning**<br>
+> [!WARNING]
 > コンテナイメージは以下の命名規則に従うこと。<br>
 > `^[a-z0-9][a-z0-9_.-]{1,}$`
 
 <br>
 
-> **Note**<br>
+> [!Note]
 > [DockerHub](https://hub.docker.com/)へコンテナイメージのPUSHを想定する場合は以下の命名規則に従うこと。
 > ```
 > IMAGE_NAME = ${DockerHubユーザー名}/${コンテナイメージ名}:${タグ名}
