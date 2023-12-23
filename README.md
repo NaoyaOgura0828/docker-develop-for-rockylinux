@@ -4,9 +4,13 @@
 <br>
 
 # Requirement
-[Fedora](https://fedoraproject.org/ja/)38ローカル環境で実行確認済。
+以下のlocalhost環境で動作確認済み<br>
+- [Fedora](https://fedoraproject.org/ja/)39
+- [Windows](https://www.microsoft.com/ja-jp/windows/)10
+
 <br>
-[VSCode](https://code.visualstudio.com/Download)と以下のVSCode拡張機能をInstallする。
+
+Hostに[VSCode](https://code.visualstudio.com/Download)と以下のVSCode拡張機能をInstallする。
 - [Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)
 - [Remote Development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)
 
@@ -16,6 +20,9 @@
 git cloneコマンドで本Repositoryを任意のディレクトリ配下にcloneする。
 
 <br>
+
+# Settings
+[.env](./.env)を設定することで、任意の設定でContainerを実行する事が可能である。
 
 ## 実行ユーザー名の設定
 [.env](./.env)内の`USER_NAME`にコンテナ起動後の実行ユーザーを設定する。
@@ -41,7 +48,7 @@ IMAGE_NAME = ${コンテナイメージ名}
 
 <br>
 
-> [!Note]
+> [!NOTE]
 > [DockerHub](https://hub.docker.com/)へコンテナイメージのPUSHを想定する場合は以下の命名規則に従うこと。
 > ```
 > IMAGE_NAME = ${DockerHubユーザー名}/${コンテナイメージ名}:${タグ名}
