@@ -25,3 +25,11 @@ RUN echo "${USER_NAME} ALL=NOPASSWD: ALL" >> /etc/sudoers
 
 # Setup WORKDIR
 WORKDIR /home/${USER_NAME}
+
+# Change User
+USER ${USER_NAME}
+
+# Setup alias
+COPY ./.alias /home/${USER_NAME}/
+RUN cat ~/.alias >> ~/.bashrc &&\
+    rm .alias
