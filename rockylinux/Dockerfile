@@ -12,11 +12,10 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 # Repository Update
 RUN dnf update -y
 
-# Install sudo
-RUN dnf install sudo -y
-
-# Install git
-RUN dnf install git -y
+# Install Packages
+RUN dnf install sudo -y &&\
+    dnf install git -y &&\
+    dnf install unzip -y
 
 # Add User
 RUN adduser ${USER_NAME} --badname
